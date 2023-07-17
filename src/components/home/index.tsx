@@ -8,6 +8,7 @@ import {
   useLngLinks,
   Language
 } from '@arcnovus/wet-boew-react';
+import useTranslation from '../../hooks/useTranslation';
 
 const Home = () => {
   const { currentLanguage } = useLanguage(useLocation());
@@ -20,24 +21,25 @@ const Home = () => {
     [history]
   );
 
-  const translatedPage =
-    currentLanguage === Language.FR ? "/en/fire-risk/" : "/fr/risque-de-feu/";
+  const translatedPage = currentLanguage === Language.FR ? "/en/" : "/fr/";
 
   const { lngLinks } = useLngLinks({ currentLanguage, translatedPage });
+
+  const { t } = useTranslation();
   
   return (
     <WetProvider linkHandler={handleClick}>
       {currentLanguage == null ? (
         <SplashTemplate
-          //nameEng={labels.en.appName}
-          //nameFra={labels.fr.appName}
+          nameEng="Canadian Wildland Fire Information System"
+          nameFra="Système canadien d'information sur les feux de végétation"
         />
       ) : (
         <DefaultTemplate
           lngLinks={lngLinks}
         >
-          <h1>Page Title</h1>
-          <p>Page content</p>
+          <h1>{t('home.title')}</h1>
+          <p>{t('home.content')}</p>
         </DefaultTemplate>
       )}
     </WetProvider>
