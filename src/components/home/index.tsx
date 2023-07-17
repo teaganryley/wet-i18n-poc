@@ -12,14 +12,6 @@ import useTranslation from '../../hooks/useTranslation';
 
 const Home = () => {
   const { currentLanguage } = useLanguage(useLocation());
-  const history = useHistory();
-
-  const handleClick = useCallback(
-    (a: { href: string; }) => {
-      history.push(a.href.replace(window.location.origin, ""));
-    },
-    [history]
-  );
 
   const translatedPage = currentLanguage === Language.FR ? "/en/" : "/fr/";
 
@@ -28,21 +20,10 @@ const Home = () => {
   const { t } = useTranslation();
   
   return (
-    <WetProvider linkHandler={handleClick}>
-      {currentLanguage == null ? (
-        <SplashTemplate
-          nameEng="Canadian Wildland Fire Information System"
-          nameFra="Système canadien d'information sur les feux de végétation"
-        />
-      ) : (
-        <DefaultTemplate
-          lngLinks={lngLinks}
-        >
-          <h1>{t('home.title')}</h1>
-          <p>{t('home.content')}</p>
-        </DefaultTemplate>
-      )}
-    </WetProvider>
+    <DefaultTemplate lngLinks={lngLinks}>
+      <h1>{t('home.title')}</h1>
+      <p>{t('home.content')}</p>
+    </DefaultTemplate>
   );
 };
 
