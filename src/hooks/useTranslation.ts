@@ -28,7 +28,7 @@ const useTranslation = () => {
 
     return LOCALES[currentLanguage][id];
   };
-  
+  // TODO: return locale too
   return { t };
 };
 

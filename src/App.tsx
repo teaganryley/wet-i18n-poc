@@ -3,6 +3,7 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 import { SplashTemplate, WetProvider } from '@arcnovus/wet-boew-react';
 import Home from './components/home';
 
+// TODO: get from json instead
 const APP_NAME_EN = "Canadian Wildland Fire Information System";
 const APP_NAME_FR = "Système canadien d'information sur les feux de végétation";
 
