@@ -11,5 +11,3 @@ export const ROUTES: Record<string, string[]> = {
   '/fr/': [ROUTE_NAMES.MINISTRY, ROUTE_NAMES.HOME],
   '/fr/risque-de-feu/': [ROUTE_NAMES.MINISTRY, ROUTE_NAMES.HOME, ROUTE_NAMES.FIRE_RISK],
 };
-
-export const ROUTE_MATCHES = Object.keys(ROUTES);

@@ -1,13 +1,17 @@
 import React from 'react';
 import { DefaultTemplate } from '@arcnovus/wet-boew-react';
 import useBreadcrumbs from '../../hooks/useBreadcrumbs';
+import useTranslation from '../../hooks/useTranslation';
 
 const FireRisk = () => {
-  useBreadcrumbs();
-  
+  const { t } = useTranslation(); 
+  const breadcrumbs = useBreadcrumbs();
+  console.log('bc: ', breadcrumbs);
+
   return (
     <DefaultTemplate>
-      Nothin here
+      <h1>{t('firerisk.title')}</h1>
+      <p>{t('firerisk.content')}</p>
     </DefaultTemplate>
   );
 };

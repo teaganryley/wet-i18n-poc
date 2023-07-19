@@ -8,7 +8,7 @@ const LOCALES = {
   fr: frenchLocale
 };
 
-type ID = keyof typeof englishLocale | keyof typeof frenchLocale;
+export type ID = keyof typeof englishLocale | keyof typeof frenchLocale;
 
 const useTranslation = () => {
   const { currentLanguage } = useLanguage(useLocation());
