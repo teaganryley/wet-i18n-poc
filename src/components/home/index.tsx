@@ -9,9 +9,11 @@ import {
   Language
 } from '@arcnovus/wet-boew-react';
 import useTranslation from '../../hooks/useTranslation';
-
+// TODO: remove trailing slashes in routing?
 const Home = () => {
-  const { currentLanguage } = useLanguage(useLocation());
+  const location = useLocation();
+  const history = useHistory();
+  const { currentLanguage } = useLanguage(location);
 
   const translatedPage = currentLanguage === Language.FR ? "/en/" : "/fr/";
 
@@ -19,10 +21,16 @@ const Home = () => {
 
   const { t } = useTranslation();
   
+  console.log('location: ', location);
+  console.log('history: ', history);
+  console.log('translated page: ', translatedPage);
+  console.log('lng links', lngLinks);
+
   return (
     <DefaultTemplate lngLinks={lngLinks}>
       <h1>{t('home.title')}</h1>
       <p>{t('home.content')}</p>
+      <a href="/en/fire-risk/">Fire Risk</a>
     </DefaultTemplate>
   );
 };

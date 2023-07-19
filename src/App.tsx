@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
 import { SplashTemplate, WetProvider } from '@arcnovus/wet-boew-react';
 import Home from './components/home';
+import FireRisk from './components/fireRisk';
 
 // TODO: get from json instead
 const APP_NAME_EN = "Canadian Wildland Fire Information System";
@@ -21,7 +22,9 @@ const App = () => {
     <WetProvider linkHandler={handleClick}>
       <Switch>
         <Route exact path="/en/" component={Home} />
+        <Route exact path="/en/fire-risk/" component={FireRisk} />
         <Route exact path="/fr/" component={Home} />
+        <Route exact path="/fr/risque-de-feu/" component={FireRisk} />
         <Route exact path="/">
           <SplashTemplate
             nameEng={APP_NAME_EN}

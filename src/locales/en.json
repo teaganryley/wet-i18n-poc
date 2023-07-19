@@ -1,5 +1,13 @@
 {
-  "ministry": "Natural Resources Canada",
+  "routes.ministry": "https://www.nrcan.gc.ca/home",
+  "routes.home": "/en/",
+  "routes.firerisk": "/en/fire-risk/",
+
+  "ministry.title": "Natural Resources Canada",
+
   "home.title": "Canadian Wildland Fire Information System",
-  "home.content": "The Canadian Wildland Fire Information System (CWFIS) creates daily fire weather and fire behavior maps year-round and hot spot maps throughout the forest fire season, generally between May and September."
+  "home.content": "The Canadian Wildland Fire Information System (CWFIS) creates daily fire weather and fire behavior maps year-round and hot spot maps throughout the forest fire season, generally between May and September.",
+
+  "firerisk.title": "Fire Risk",
+  "firerisk.content": "Map goes here!"
 }

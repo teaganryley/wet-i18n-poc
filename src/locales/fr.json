@@ -1,5 +1,13 @@
 {
-  "ministry": "Ressources naturelles Canada",
+  "routes.ministry": "https://www.rncan.gc.ca/accueil",
+  "routes.home": "/fr/",
+  "routes.firerisk": "/fr/risque-de-feu/",
+
+  "ministry.title": "Ressources naturelles Canada",
+  
   "home.title": "Système canadien d'information sur les feux de végétation",
-  "home.content": "Le Système canadien d'information sur les feux de végétation (SCIFV) génère des cartes de forêt météo et de comportement du feu à l'année ainsi que des cartes des points chauds durant toute la saison des incendies de forêt s'étalant généralement de mai à septembre."
+  "home.content": "Le Système canadien d'information sur les feux de végétation (SCIFV) génère des cartes de forêt météo et de comportement du feu à l'année ainsi que des cartes des points chauds durant toute la saison des incendies de forêt s'étalant généralement de mai à septembre.",
+
+  "firerisk.title": "Risque de feu",
+  "firerisk.content": "La carte va ici"
 }
