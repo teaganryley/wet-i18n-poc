@@ -1,4 +1,4 @@
-import { useLanguage } from '@arcnovus/wet-boew-react';
+import { useLanguage, Language } from '@arcnovus/wet-boew-react';
 import { useLocation } from 'react-router-dom';
 import englishLocale from '../locales/en.json';
 import frenchLocale from '../locales/fr.json';
@@ -13,23 +13,25 @@ export type ID = keyof typeof englishLocale | keyof typeof frenchLocale;
 const useTranslation = () => {
   const { currentLanguage } = useLanguage(useLocation());
 
-  const t = (id: ID) => {
-    if (!id || !currentLanguage) return null;
+  const t = (id: ID, selectedLocale?: Language) => {
+    const locale = selectedLocale ? selectedLocale : currentLanguage;
     
-    if (!LOCALES[currentLanguage]) {
+    if (!id || !locale) return null;
+    
+    if (!LOCALES[locale]) {
       console.warn(`locale ${currentLanguage} is not a valid key`);
       return null;
     }
   
-    if (!LOCALES[currentLanguage]?.[id]) {
+    if (!LOCALES[locale]?.[id]) {
       console.warn('Invalid string provided');
       return null;
     }
 
-    return LOCALES[currentLanguage][id];
+    return LOCALES[locale][id];
   };
-  // TODO: return locale too
-  return { t };
+
+  return { t, currentLanguage };
 };
 
 export default useTranslation;

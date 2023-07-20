@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { ROUTES } from "../constants/routes";
+import { ROUTE_BREADCRUMBS } from "../constants/routes";
 import { useMemo } from 'react';
 import useTranslation, { ID } from './useTranslation';
 
@@ -8,7 +8,7 @@ const useBreadcrumbs = () => {
   const { t } = useTranslation();
 
   const breadcrumbs = useMemo(() => {  
-    const currentPath = ROUTES[pathname] ? ROUTES[pathname] : [];
+    const currentPath = ROUTE_BREADCRUMBS[pathname] ? ROUTE_BREADCRUMBS[pathname] : [];
 
     const breadcrumbs = currentPath.map(pageName => {
       const routeId = `routes.${pageName}`;
