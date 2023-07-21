@@ -1,6 +1,4 @@
-import React from 'react';
 import { DefaultTemplate } from '@arcnovus/wet-boew-react';
-import useBreadcrumbs from '../../hooks/useBreadcrumbs';
 import useTranslation from '../../hooks/useTranslation';
 import useWetTemplateLinks from '../../hooks/useWetTemplateLinks';
 
